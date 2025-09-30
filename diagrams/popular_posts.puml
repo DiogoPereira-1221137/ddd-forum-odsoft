@@ -1,0 +1,6 @@
+@startuml
+User -> ForumSystem: request popular posts
+ForumSystem -> PostRepository: getTop5Posts()
+PostRepository --> ForumSystem: top 5 posts
+ForumSystem --> User: show top 5 posts
+@enduml

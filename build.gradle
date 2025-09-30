@@ -1,3 +1,24 @@
 plugins {
     id "com.github.node-gradle.node" version "7.1.0"
 }
+
+node {
+    version = '22.15.0'
+    download = true
+}
+
+tasks.register("buildApp", NpmTask) {
+    args = ["run", "build"]
+}
+
+tasks.register("docsGeneration", NpmTask) {
+    args = ["run", "docs"]
+}
+
+tasks.register("runUnitTests", NpmTask) {
+    args = ["run", "test"]
+}
+
+tasks.register("runAPITests", NpmTask) {
+    args = ["run", "test:api"]
+}
